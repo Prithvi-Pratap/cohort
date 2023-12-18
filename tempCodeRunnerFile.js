@@ -1,1 +1,0 @@
-let totalTime = afterTime - beforeTime;
