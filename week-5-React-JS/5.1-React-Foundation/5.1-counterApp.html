@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Counter App</title>
+</head>
+
+<body>
+    <div class="parentDiv"></div>
+</body>
+<script>
+    let state = {
+        count: 0
+    }
+
+    function buttonComponentRender() {
+        const parentDiv = document.querySelector('.parentDiv');
+        const button = document.createElement('button');
+        button.innerText = `Count ${state.count}`;
+        button.setAttribute("onclick", 'onButtonClick()');
+        parentDiv.appendChild(button);
+    }
+    function onButtonClick(count) {
+        state.count++;
+        buttonComponentReRender(state.count);
+    }
+
+    function buttonComponentReRender(count) {
+        const button =document.querySelector("button");
+        button.innerText = `Count ${count}`;
+    }
+
+    buttonComponentRender();
+
+</script>
+
+</html>
