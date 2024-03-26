@@ -132,35 +132,57 @@
 // export default ParentComponent;
 
 
-  import React, { useState } from 'react'
+  // import React, { useState } from 'react'
 
-  function App() {
+  // function App() {
 
-    const [items, setItems]=useState([1,2,3,4]);
+  //   const [items, setItems]=useState([1,2,3,4]);
 
-    const deleteItem = (id)=>{setItems(items.filter((item)=>item!==id))};
-
-
-
-    return (
-      <div>
-        {items.map(item=><GenerateItem key={item} id={item} onDelete={deleteItem} />)}
-      </div>
-    )
-  }
+  //   const deleteItem = (id)=>{setItems(items.filter((item)=>item!==id))};
 
 
-  function GenerateItem({id,onDelete}) {
 
-    const handleClick=()=>{
-      onDelete(id);
-    }
+  //   return (
+  //     <div>
+  //       {items.map(item=><GenerateItem key={item} id={item} onDelete={deleteItem} />)}
+  //     </div>
+  //   )
+  // }
+
+
+  // function GenerateItem({id,onDelete}) {
+
+  //   const handleClick=()=>{
+  //     onDelete(id);
+  //   }
   
+  //   return (
+  //     <div>
+  //       Item {id} <button onClick={handleClick}>Delete</button>
+  //     </div>
+  //   )
+  // }
+
+  // export default App
+
+
+  import React, { useState } from 'react'
+import RenderCount from './component/RenderCount'
+  
+  function App() {
+    const [count,setCount]=useState(0);
+
+    const handleClick = ()=>{
+      setCount(prev=>prev+1);
+    }
+
     return (
       <div>
-        Item {id} <button onClick={handleClick}>Delete</button>
+        Count:{count}
+        <button onClick={handleClick}>Increment</button>
+        <RenderCount />
       </div>
     )
   }
-
+  
   export default App
